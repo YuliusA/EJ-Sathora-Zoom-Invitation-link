@@ -68,7 +68,7 @@ const ContentForm = () => {
                         maxWidth: 184,
                         opacity: 0.15,
                         position: 'absolute',
-                        bottom: '3vh',
+                        bottom: '8vh',
                         right: 0
                     },
                 }}
