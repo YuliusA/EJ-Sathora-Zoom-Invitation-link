@@ -63,8 +63,18 @@ const ContentForm = () => {
                     minHeight: '100vh',
                     display: 'flex',
                     flexDirection: 'column',
+                    position: 'relative',
+                    '& .logo': {
+                        maxWidth: 184,
+                        opacity: 0.15,
+                        position: 'absolute',
+                        bottom: '3vh',
+                        right: 0
+                    },
                 }}
             >
+                <img className='logo' src='images/sathora-logo.png' alt='Sathora' />
+
                 <TextField
                     id='invitationInput'
                     inputRef={inputRef}
@@ -78,21 +88,7 @@ const ContentForm = () => {
                     }}
                 />
 
-                <Card
-                    variant='outlined'
-                    sx={{
-                        position: 'relative',
-                        '& .logo': {
-                            maxWidth: 184,
-                            opacity: 0.15,
-                            position: 'absolute',
-                            bottom: 0,
-                            right: 0
-                        },
-                    }}
-                >
-                    <img className='logo' src='images/sathora-logo.png' alt='Sathora' />
-
+                <Card variant='outlined'>
                     <CardContent sx={{ wordBreak: 'break-word' }}>
                         <Typography variant='h5' component='div' mb={3}>
                             EJ Sathora{bull}4{bull} {day}
