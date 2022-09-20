@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { useMemo, useState } from 'react';
+import EjsContext from './contexts';
+import CssBaseline from '@mui/material/CssBaseline';
+import NavDrawer from './components/NavDrawer';
+import ContentForm from './components/ContentForm';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [day, setDay] = useState('Senin');
+    const value = useMemo(
+        () => ({ day, setDay }),
+        [day]
+    );
+
+    return (
+        <EjsContext.Provider value={value}>
+            <CssBaseline />
+            <ContentForm />
+            <NavDrawer />
+        </EjsContext.Provider>
+    );
 }
 
 export default App;
