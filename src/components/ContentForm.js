@@ -123,7 +123,7 @@ const ContentForm = () => {
                                 <Typography>Text Copied!</Typography>
                             </Stack>
                         }
-                        sx={{ bottom: { xs: 94 } }}
+                        sx={{ bottom: { xs: '25%' } }}
                     />
                 </CardActions>
             </Card>
