@@ -20,7 +20,7 @@ function App() {
             <CssBaseline />
 
             <Container maxWidth='sm'>
-                <Box sx={{ minHeight: '100vh', height: '100%', position: 'relative' }}>
+                <Box sx={{ minHeight: '100vh', height: '100vh', position: 'relative' }}>
                     <Header />
                     <ContentForm />
                     {/* <NavDrawer /> */}
