@@ -27,7 +27,7 @@ const Header = () => {
     const { day } = React.useContext(EjsContext);
 
     return (
-        <AppBar position='static' color='transparent' elevation={0} sx={{ mb: 1 }}>
+        <AppBar position='static' color='transparent' elevation={0} sx={{ my: 1 }}>
             <Toolbar disableGutters>
             
                 <Box sx={{ mr: 1, p: 0.5, '& .logo': { verticalAlign: 'middle' }}}>
