@@ -26,7 +26,11 @@ const NavDial = () => {
 
             <SpeedDial
                 ariaLabel='Select Day'
-                sx={{ position: 'absolute', bottom: 16, right: 16 }}
+                sx={{
+                    position: 'absolute',
+                    bottom: 16,
+                    right: 16,
+                }}
                 icon={<SpeedDialIcon />}
                 onClose={handleClose}
                 onOpen={handleOpen}
