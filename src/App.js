@@ -1,7 +1,11 @@
 import { useMemo, useState } from 'react';
 import EjsContext from './contexts';
 import CssBaseline from '@mui/material/CssBaseline';
-import NavDrawer from './components/NavDrawer';
+import Container from '@mui/material/Container';
+import Box from '@mui/material/Box';
+import Header from './components/Header';
+// import NavDrawer from './components/NavDrawer';
+import NavDial from './components/NavDial';
 import ContentForm from './components/ContentForm';
 
 function App() {
@@ -14,8 +18,15 @@ function App() {
     return (
         <EjsContext.Provider value={value}>
             <CssBaseline />
-            <ContentForm />
-            <NavDrawer />
+
+            <Container maxWidth='sm'>
+                <Box sx={{ minHeight: '100vh', height: '100%', position: 'relative' }}>
+                    <Header />
+                    <ContentForm />
+                    {/* <NavDrawer /> */}
+                    <NavDial />
+                </Box>
+            </Container>
         </EjsContext.Provider>
     );
 }

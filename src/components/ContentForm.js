@@ -4,7 +4,6 @@ import { data } from '../data';
 import content from './content';
 
 // Mui Components
-import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -15,19 +14,11 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Link from '@mui/material/Link';
 import Snackbar from '@mui/material/Snackbar';
+import Divider from '@mui/material/Divider';
 
 // Mui Icons
 import ContentCopyOutlinedIcon from '@mui/icons-material/ContentCopyOutlined';
 import CheckCircleOutlineOutlinedIcon from '@mui/icons-material/CheckCircleOutlineOutlined';
-
-const bull = (
-    <Box
-        component='span'
-        sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
-    >
-      •
-    </Box>
-);
 
 const ContentForm = () => {
     const { day } = React.useContext(EjsContext);
@@ -55,26 +46,18 @@ const ContentForm = () => {
     }
 
     return (
-        <Container maxWidth='sm'>
+        <React.Fragment>
+            <Divider />
+
             <Box
                 sx={{
                     pt: 3,
                     pb: 11,
-                    minHeight: '100vh',
+                    // minHeight: '100vh',
                     display: 'flex',
                     flexDirection: 'column',
-                    position: 'relative',
-                    '& .logo': {
-                        maxWidth: 184,
-                        opacity: 0.15,
-                        position: 'absolute',
-                        bottom: '8vh',
-                        right: 0
-                    },
                 }}
             >
-                <img className='logo' src='images/sathora-logo.png' alt='Sathora' />
-
                 <TextField
                     id='invitationInput'
                     inputRef={inputRef}
@@ -90,9 +73,9 @@ const ContentForm = () => {
 
                 <Card variant='outlined'>
                     <CardContent sx={{ wordBreak: 'break-word' }}>
-                        <Typography variant='h5' component='div' mb={3}>
+                        {/* <Typography variant='h5' component='div' mb={3}>
                             EJ Sathora{bull}4{bull} {day}
-                        </Typography>
+                        </Typography> */}
 
                         <Typography variant='body2' mb={3}>
                             EJ Sathora is inviting you to a scheduled Zoom meeting.
@@ -151,7 +134,7 @@ const ContentForm = () => {
                     </CardActions>
                 </Card>
             </Box>
-        </Container>
+        </React.Fragment>
     )
 }
 
