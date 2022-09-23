@@ -39,7 +39,7 @@ const Header = () => {
                 </Typography>
 
                 <Typography variant='h6' component='div' sx={{ mr: 1 }}>
-                    <EventAvailableIcon color='secondary' sx={{ mr: 0.5, verticalAlign: 'text-bottom' }} />
+                    <EventAvailableIcon color='primary' sx={{ mr: 0.5, verticalAlign: 'text-bottom' }} />
                     {day}
                 </Typography>
             </Toolbar>
