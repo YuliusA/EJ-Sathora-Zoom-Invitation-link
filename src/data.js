@@ -13,8 +13,8 @@ export const data = [
     },
     {
         id: 'Rabu',
-        linkZoom: 'https://us06web.zoom.us/j/85696649034?pwd=RjlNTC9XL3FSSGVyNDVHTjZBSEpCdz09',
-        meetingId: '856 9664 9034',
+        linkZoom: 'https://us06web.zoom.us/j/88457540609?pwd=N294V1FhQzgvZG4veDgySXhmUTU2QT09',
+        meetingId: '884 5754 0609',
         passcode: 'ejrabu',
     },
     {
