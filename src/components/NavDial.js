@@ -15,6 +15,16 @@ const NavDial = () => {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
+    const actions = [
+        ...data,
+        {
+            id: 'Klaim Host',
+            linkZoom: '',
+            meetingId: '',
+            passcode: ''
+        }
+    ];
+
     const selectDay = (id) => {
         setDay(id);
         handleClose();
@@ -27,16 +37,16 @@ const NavDial = () => {
             <SpeedDial
                 ariaLabel='Select Day'
                 sx={{
-                    position: 'absolute',
-                    bottom: 16,
-                    right: 16,
+                    position: 'fixed',
+                    bottom: '10vh',
+                    right: 20,
                 }}
                 icon={<SpeedDialIcon />}
                 onClose={handleClose}
                 onOpen={handleOpen}
                 open={open}
             >
-                {data.map((item) => (
+                {actions.map((item) => (
                     <SpeedDialAction
                         key={item.id}
                         icon={<SaveIcon />}
