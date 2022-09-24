@@ -7,7 +7,7 @@ import Backdrop from '@mui/material/Backdrop';
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialIcon from '@mui/material/SpeedDialIcon';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
-import SaveIcon from '@mui/icons-material/Save';
+import PersonPinIcon from '@mui/icons-material/PersonPin';
 
 const NavDial = () => {
     const { setDay } = React.useContext(EjsContext);
@@ -19,6 +19,7 @@ const NavDial = () => {
         ...data,
         {
             id: 'Klaim Host',
+            icon: <PersonPinIcon />,
             linkZoom: '',
             meetingId: '',
             passcode: ''
@@ -38,8 +39,8 @@ const NavDial = () => {
                 ariaLabel='Select Day'
                 sx={{
                     position: 'fixed',
-                    bottom: '10vh',
-                    right: 20,
+                    bottom: '7vh',
+                    right: 32,
                 }}
                 icon={<SpeedDialIcon />}
                 onClose={handleClose}
@@ -49,7 +50,7 @@ const NavDial = () => {
                 {actions.map((item) => (
                     <SpeedDialAction
                         key={item.id}
-                        icon={<SaveIcon />}
+                        icon={item.icon}
                         tooltipTitle={item.id}
                         tooltipOpen
                         onClick={() => selectDay(item.id)}
