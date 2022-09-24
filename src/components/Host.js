@@ -1,10 +1,11 @@
-import * as React from 'react';
+// Mui Components
+import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
 const Host = () => {
     return (
-        <React.Fragment>
-            <Typography variant='h5' color='primary' sx={{ mb: 2 }}>
+        <Box component='main' sx={{ pb: 9 }}>
+            <Typography variant='h5' color='secondary' sx={{ mb: 2 }}>
                 Klaim Host
             </Typography>
 
@@ -47,7 +48,7 @@ const Host = () => {
             <Typography gutterBottom>
                 "What's happened to me? " he thought. It wasn't a dream. His room, a proper human
             </Typography>
-        </React.Fragment>
+        </Box>
     );
 }
 

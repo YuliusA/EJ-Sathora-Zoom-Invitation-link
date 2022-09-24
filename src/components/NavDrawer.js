@@ -1,37 +1,54 @@
 import * as React from 'react';
 import EjsContext from '../contexts';
 import { data } from '../data';
+
+// Mui Components
 import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
 import Container from '@mui/material/Container';
 import Fab from '@mui/material/Fab';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
-import RadioGroup from '@mui/material/RadioGroup';
-import Radio from '@mui/material/Radio';
-import FormControl from '@mui/material/FormControl';
-import FormControlLabel from '@mui/material/FormControlLabel';
+import List from '@mui/material/List';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
+
+// Mui Icons
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
+import PersonPinIcon from '@mui/icons-material/PersonPin';
 
 const NavDrawer = () => {
-    const { day, setDay } = React.useContext(EjsContext);
+    const { setDay } = React.useContext(EjsContext);
     const [open, setOpen] = React.useState(false);
 
     const toggleDrawer = () => {
         setOpen(!open);
     }
 
-    const handleChange = (event) => {
-        setDay(event.target.value);
+    const handleSelect = (itemId) => {
+        setDay({ id: itemId });
         toggleDrawer();
-    }
+    };
 
     return (
         <React.Fragment>
-            <AppBar position='fixed' color='transparent' elevation={0} sx={{ top: 'auto', bottom: 0 }}>
+            <AppBar
+                component='footer'
+                position='fixed'
+                color='transparent'
+                elevation={0}
+                sx={{
+                    top: 'auto',
+                    bottom: 0
+                }}
+            >
                 <Container maxWidth='sm' sx={{ py: 2 }}>
-                    <Fab color='secondary' onClick={toggleDrawer} aria-label='pilih hari'>
-                        <FormatListBulletedIcon />
-                    </Fab>
+                    <Toolbar disableGutters sx={{ justifyContent: 'flex-end' }}>
+                        <Fab color='secondary' onClick={toggleDrawer} aria-label='pilih hari'>
+                            <FormatListBulletedIcon />
+                        </Fab>
+                    </Toolbar>
                 </Container>
             </AppBar>
 
@@ -42,31 +59,34 @@ const NavDrawer = () => {
                 onOpen={toggleDrawer}
             >
                 <Container maxWidth='sm'>
-                    <FormControl fullWidth>
-                        <RadioGroup
-                            name='ejs-days-radio-btns-group'
-                            value={day}
-                            onChange={handleChange}
-                            sx={{
-                                my: 2,
-                                width: '100%',
-                                '& .MuiFormControlLabel-root': {
-                                    py: 0.5
-                                }
-                            }}
+                    <List component='nav' aria-label='Day Selection'>
+                        {data.map((item) => (
+                            <ListItemButton
+                                key={item.id}
+                                onClick={() => handleSelect(item.id)}
+                            >
+                                <ListItemIcon>
+                                    {item.icon}
+                                </ListItemIcon>
+
+                                <ListItemText primary={item.label} />
+                            </ListItemButton>
+                        ))}
+                    </List>
+
+                    <Divider />
+
+                    <List component='nav' aria-label='Klaim Host'>
+                        <ListItemButton
+                            onClick={() => handleSelect(null)}
                         >
-                            {data.map((item, index) => (
-                                <React.Fragment key={item.id}>
-                                    <FormControlLabel
-                                        value={item.id}
-                                        control={<Radio />}
-                                        label={item.id}
-                                    />
-                                    {(data.length - 1) !== index && <Divider />}
-                                </React.Fragment>
-                            ))}
-                        </RadioGroup>
-                    </FormControl>
+                            <ListItemIcon>
+                                <PersonPinIcon />
+                            </ListItemIcon>
+
+                            <ListItemText primary='Klaim Host' />
+                        </ListItemButton>
+                    </List>
                 </Container>
             </SwipeableDrawer>
         </React.Fragment>
