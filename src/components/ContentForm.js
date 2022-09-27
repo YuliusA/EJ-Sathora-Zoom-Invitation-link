@@ -135,7 +135,7 @@ const ContentForm = () => {
                     </Typography>
 
                     <Typography variant='body2'>
-                        Topic: EJ Sathora 4 - {selectedDay.id} Malam
+                        Topic: EJ Sathora 4 - {selectedDay.label} Malam
                     </Typography>
 
                     <Typography variant='body2' mb={3}>
