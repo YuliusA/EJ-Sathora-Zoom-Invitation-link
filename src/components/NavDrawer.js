@@ -6,6 +6,7 @@ import { data } from '../data';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
 import Fab from '@mui/material/Fab';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import List from '@mui/material/List';
@@ -19,7 +20,7 @@ import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 import PersonPinIcon from '@mui/icons-material/PersonPin';
 
 const NavDrawer = () => {
-    const { setDay } = React.useContext(EjsContext);
+    const { day, setDay } = React.useContext(EjsContext);
     const [open, setOpen] = React.useState(false);
 
     const toggleDrawer = () => {
@@ -45,6 +46,10 @@ const NavDrawer = () => {
             >
                 <Container maxWidth='sm' sx={{ py: 2 }}>
                     <Toolbar disableGutters sx={{ justifyContent: 'flex-end' }}>
+                        {day.id &&
+                            <Typography variant='subtitle1' sx={{ mr: 2 }}>Pilih Hari</Typography>
+                        }
+
                         <Fab color='secondary' onClick={toggleDrawer} aria-label='pilih hari'>
                             <FormatListBulletedIcon />
                         </Fab>
