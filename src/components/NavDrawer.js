@@ -47,7 +47,7 @@ const NavDrawer = () => {
                 <Container maxWidth='sm' sx={{ py: 2 }}>
                     <Toolbar disableGutters sx={{ justifyContent: 'flex-end' }}>
                         {day.id &&
-                            <Typography variant='subtitle1' sx={{ mr: 2 }}>Pilih Hari</Typography>
+                            <Typography variant='subtitle1' sx={{ mr: 2 }}>{'Pilih Hari >>'}</Typography>
                         }
 
                         <Fab color='secondary' onClick={toggleDrawer} aria-label='pilih hari'>
