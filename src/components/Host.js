@@ -1,6 +1,16 @@
 // Mui Components
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import CardMedia from '@mui/material/CardMedia';
+import TextField from '@mui/material/TextField';
+import Alert from '@mui/material/Alert';
+import InputAdornment from '@mui/material/InputAdornment';
+import IconButton from '@mui/material/IconButton';
+import Divider from '@mui/material/Divider';
+
+// Mui Icons
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import ContentCopyOutlinedIcon from '@mui/icons-material/ContentCopyOutlined';
 
 const Host = () => {
     return (
@@ -10,44 +20,158 @@ const Host = () => {
             </Typography>
 
             <Typography gutterBottom>
-                Coming Soon..
+                Berikut adalah langkah-langkah untuk klaim host.
             </Typography>
 
-            {/* <Typography gutterBottom>
-                He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections.
-            </Typography>
+            <Divider>Langkah 1</Divider>
 
-            <Typography gutterBottom>
-                The bedding was hardly able to cover it and seemed ready to slide off any moment.
-            </Typography>
+            <Box sx={{ pt: 2, pb: 3 }}>
+                <Typography sx={{ mb: 2 }}>
+                    Setelah anda join meeting klik tombol participants yang biasanya terletak di bagian bawah layar
+                </Typography>
 
-            <Typography gutterBottom>
-                His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked.
-            </Typography>
+                <CardMedia
+                    component='img'
+                    height='auto'
+                    image='images/klaim_host_01.png'
+                    alt=''
+                    sx={{ mb: 1 }}
+                />
+                <Typography
+                    variant='caption'
+                    display='block'
+                    fontStyle='italic'
+                    color='text.secondary'
+                    sx={{ mb: 2 }}
+                >
+                    Gbr 1. Participants menu
+                </Typography>
+            </Box>
 
-            <Typography gutterBottom>
-                "What's happened to me? " he thought. It wasn't a dream. His room, a proper human
-            </Typography>
+            <Divider>Langkah 2</Divider>
 
-            <Typography gutterBottom>
-                One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.
-            </Typography>
+            <Box sx={{ pt: 2, pb: 3 }}>
+                <CardMedia
+                    component='img'
+                    height='auto'
+                    image='images/klaim_host_02a.png'
+                    alt=''
+                    sx={{ mb: 1 }}
+                />
+                <Typography
+                    variant='caption'
+                    display='block'
+                    fontStyle='italic'
+                    color='text.secondary'
+                    sx={{ mb: 2 }}
+                >
+                    Gbr 2. Participants window
+                </Typography>
 
-            <Typography gutterBottom>
-                He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections.
-            </Typography>
+                <Typography sx={{ mb: 2 }}>
+                    Setelah window participants muncul, klik tombol <IconButton variant='outlined' size='small'><MoreHorizIcon fontSize='small' /></IconButton> yang ada di kanan bawah dan pilih "Claim host"
+                </Typography>
 
-            <Typography gutterBottom>
-                The bedding was hardly able to cover it and seemed ready to slide off any moment.
-            </Typography>
+                <CardMedia
+                    component='img'
+                    height='auto'
+                    image='images/klaim_host_02b.png'
+                    alt=''
+                    sx={{ mb: 1 }}
+                />
+                <Typography
+                    variant='caption'
+                    display='block'
+                    fontStyle='italic'
+                    color='text.secondary'
+                    sx={{ mb: 2 }}
+                >
+                    Gbr 3. Claim Host menu
+                </Typography>
+            </Box>
 
-            <Typography gutterBottom>
-                His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked.
-            </Typography>
+            <Divider>Langkah 3</Divider>
 
-            <Typography gutterBottom>
-                "What's happened to me? " he thought. It wasn't a dream. His room, a proper human
-            </Typography> */}
+            <Box sx={{ pt: 2, pb: 3 }}>
+                <CardMedia
+                    component='img'
+                    height='auto'
+                    image='images/klaim_host_03a.png'
+                    alt=''
+                    sx={{ mb: 1 }}
+                />
+                <Typography
+                    variant='caption'
+                    display='block'
+                    fontStyle='italic'
+                    color='text.secondary'
+                    sx={{ mb: 2 }}
+                >
+                    Gbr 4. Claim Host window
+                </Typography>
+
+                <Typography sx={{ mb: 2 }}>
+                    Setelah Claim Host window muncul, masukkan Host Key pada bagian input
+                </Typography>
+
+                <TextField
+                    id='hostKeyInput'
+                    defaultValue='745313'
+                    InputProps={{
+                        readOnly: true,
+                        startAdornment: <InputAdornment position='start' sx={{ mr: 2 }}>Host key:</InputAdornment>,
+                        endAdornment:
+                            <InputAdornment position='end'>
+                                <IconButton size='small'>
+                                    <ContentCopyOutlinedIcon fontSize='small' />
+                                </IconButton>
+                            </InputAdornment>
+                    }}
+                    sx={{ bgcolor: 'grey.200', width: '100%', mb: 2 }}
+                />
+
+                <CardMedia
+                    component='img'
+                    height='auto'
+                    image='images/klaim_host_03b.png'
+                    alt=''
+                    sx={{ mb: 1 }}
+                />
+                <Typography
+                    variant='caption'
+                    display='block'
+                    fontStyle='italic'
+                    color='text.secondary'
+                    sx={{ mb: 2 }}
+                >
+                    Gbr 5. Enter Host Key
+                </Typography>
+            </Box>
+
+            <Box sx={{ pt: 2, pb: 6 }}>
+                <CardMedia
+                    component='img'
+                    height='auto'
+                    image='images/klaim_host_04.png'
+                    alt=''
+                    sx={{ mb: 1 }}
+                />
+                <Typography
+                    variant='caption'
+                    display='block'
+                    fontStyle='italic'
+                    color='text.secondary'
+                    sx={{ mb: 2 }}
+                >
+                    Gbr 4. Host, Me
+                </Typography>
+
+                <Typography sx={{ mb: 2 }}>
+                    Setelah Host Key berhasil diverifikasi anda sudah menjadi host.
+                </Typography>
+
+                <Alert severity="info">Jangan lupa untuk "end" meeting setiap kali pertemuan!</Alert>
+            </Box>
         </Box>
     );
 }
