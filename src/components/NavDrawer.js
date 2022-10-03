@@ -81,7 +81,7 @@ const NavDrawer = () => {
 
                     <Divider />
 
-                    <List component='nav' aria-label='Klaim Host'>
+                    <List component='nav' aria-label='Claim Host'>
                         <ListItemButton
                             onClick={() => handleSelect(null)}
                         >
@@ -89,7 +89,7 @@ const NavDrawer = () => {
                                 <PersonPinIcon />
                             </ListItemIcon>
 
-                            <ListItemText primary='Klaim Host' />
+                            <ListItemText primary='Claim Host' />
                         </ListItemButton>
                     </List>
                 </Container>

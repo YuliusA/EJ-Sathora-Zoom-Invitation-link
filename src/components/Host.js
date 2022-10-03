@@ -16,14 +16,26 @@ const Host = () => {
     return (
         <Box component='main' sx={{ pb: 9 }}>
             <Typography variant='h5' color='secondary' sx={{ mb: 2 }}>
-                Klaim Host
+                Claim Host
             </Typography>
 
-            <Typography gutterBottom>
-                Berikut adalah langkah-langkah untuk klaim host.
+            <Typography sx={{ mb: 2 }}>
+                Zoom meeting untuk sesi-sesi EJ ini adalah "open zoom meeting", artinya peserta meeting dapat join sebelum host atau tanpa host, yaitu 15 menit sebelum waktu yang dijadwalkan. Untuk itu fasilitator diharapkan untuk join lebih dahulu sebelum peserta EJ, dan dapat melakukan Claim Host pada sesi yang berlangsung. Dengan demikian anda (fasilitator) memegang kendali atas meeting tersebut. Contoh: host dapat melakukan share screen atau menjadikan fasilitator lain sebagai co-host.
             </Typography>
 
-            <Divider>Langkah 1</Divider>
+            <Typography sx={{ mb: 4 }}>
+                Berikut adalah langkah-langkah untuk Claim Host.
+            </Typography>
+
+            <Divider
+                sx={{
+                    color: 'secondary.main',
+                    '&:before': { borderColor: 'secondary.main' },
+                    '&:after': { borderColor: 'secondary.main' },
+                }}
+            >
+                Langkah 1
+            </Divider>
 
             <Box sx={{ pt: 2, pb: 3 }}>
                 <Typography sx={{ mb: 2 }}>
@@ -48,7 +60,15 @@ const Host = () => {
                 </Typography>
             </Box>
 
-            <Divider>Langkah 2</Divider>
+            <Divider
+                sx={{
+                    color: 'secondary.main',
+                    '&:before': { borderColor: 'secondary.main' },
+                    '&:after': { borderColor: 'secondary.main' },
+                }}
+            >
+                Langkah 2
+            </Divider>
 
             <Box sx={{ pt: 2, pb: 3 }}>
                 <CardMedia
@@ -90,7 +110,15 @@ const Host = () => {
                 </Typography>
             </Box>
 
-            <Divider>Langkah 3</Divider>
+            <Divider
+                sx={{
+                    color: 'secondary.main',
+                    '&:before': { borderColor: 'secondary.main' },
+                    '&:after': { borderColor: 'secondary.main' },
+                }}
+            >
+                Langkah 3
+            </Divider>
 
             <Box sx={{ pt: 2, pb: 3 }}>
                 <CardMedia
@@ -166,11 +194,11 @@ const Host = () => {
                     Gbr 4. Host, Me
                 </Typography>
 
-                <Typography sx={{ mb: 2 }}>
+                <Typography sx={{ mb: 4 }}>
                     Setelah Host Key berhasil diverifikasi anda sudah menjadi host.
                 </Typography>
 
-                <Alert severity="info">Jangan lupa untuk "end" meeting setiap kali pertemuan!</Alert>
+                <Alert severity="info">Jangan lupa untuk "end" meeting setiap kali pertemuan ya!</Alert>
             </Box>
         </Box>
     );
