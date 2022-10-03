@@ -173,12 +173,15 @@ const Host = () => {
                     InputProps={{
                         readOnly: true,
                         startAdornment: <InputAdornment position='start' sx={{ mr: 2 }}>Host key:</InputAdornment>,
-                        endAdornment: !copied ? (
+                        endAdornment:
                             <InputAdornment position='end'>
-                                <IconButton size='small' color='primary' onClick={copyKey}>
-                                    <ContentCopyOutlinedIcon fontSize='small' />
-                                </IconButton>
-                            </InputAdornment> ) : ( <Typography color='primary'>Copied</Typography> )
+                                {!copied ?
+                                    <IconButton size='small' color='primary' onClick={copyKey}>
+                                        <ContentCopyOutlinedIcon fontSize='small' />
+                                    </IconButton>
+                                    : <Typography color='primary' fontSize='small'>Copied</Typography>
+                                }
+                            </InputAdornment>
                     }}
                     sx={{ bgcolor: 'grey.200', width: '100%', mb: 2 }}
                 />
