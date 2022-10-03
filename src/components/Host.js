@@ -1,3 +1,5 @@
+import * as React from 'react';
+
 // Mui Components
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -13,6 +15,28 @@ import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import ContentCopyOutlinedIcon from '@mui/icons-material/ContentCopyOutlined';
 
 const Host = () => {
+    const [copied, setCopied] = React.useState(false);
+    const keyRef = React.useRef();
+
+    React.useEffect(() => {
+        const loading = setTimeout(() => {
+            setCopied(false);
+        }, 2000);
+
+        return () => {
+            clearTimeout(loading);
+        }
+    }, [copied]);
+
+    const copyKey = () => {
+        keyRef.current.select();
+        keyRef.current.setSelectionRange(0, 99999); /* For mobile devices */
+        navigator.clipboard.writeText(keyRef.current.value); /* Copy the text inside the text field */
+
+        setCopied(true);
+        // setSnack({ ...snack, open: true });
+    }
+
     return (
         <Box component='main' sx={{ pb: 9 }}>
             <Typography variant='h5' color='secondary' sx={{ mb: 2 }}>
@@ -145,15 +169,16 @@ const Host = () => {
                 <TextField
                     id='hostKeyInput'
                     defaultValue='745313'
+                    inputRef={keyRef}
                     InputProps={{
                         readOnly: true,
                         startAdornment: <InputAdornment position='start' sx={{ mr: 2 }}>Host key:</InputAdornment>,
-                        endAdornment:
+                        endAdornment: !copied ? (
                             <InputAdornment position='end'>
-                                <IconButton size='small'>
+                                <IconButton size='small' color='primary' onClick={copyKey}>
                                     <ContentCopyOutlinedIcon fontSize='small' />
                                 </IconButton>
-                            </InputAdornment>
+                            </InputAdornment> ) : ( <Typography color='primary'>Copied</Typography> )
                     }}
                     sx={{ bgcolor: 'grey.200', width: '100%', mb: 2 }}
                 />
