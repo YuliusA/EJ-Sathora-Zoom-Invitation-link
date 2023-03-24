@@ -1,5 +1,4 @@
 import { useMemo, useState } from 'react';
-import { Routes, Route, Outlet } from 'react-router-dom';
 import EjsContext from './contexts';
 import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
@@ -18,22 +17,17 @@ function App() {
     return (
         <EjsContext.Provider value={value}>
             <CssBaseline />
-            <Routes>
-                <Route path='/' element={<Layout />}>
-                    <Route index element={<ContentForm />} />
-                    <Route path='host' element={<Host />} />
-                </Route>
-            </Routes>
+            <Container maxWidth='sm'>
+                <Header />
+
+                {day.id
+                    ? <ContentForm />
+                    : <Host />
+                }
+
+                <NavDrawer />
+            </Container>
         </EjsContext.Provider>
-    );
-}
-function Layout() {
-    return (
-        <Container maxWidth='sm'>
-            <Header />
-            <Outlet />
-            <NavDrawer />
-        </Container>
     );
 }
 
