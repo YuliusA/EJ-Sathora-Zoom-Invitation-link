@@ -8,10 +8,10 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
     <React.StrictMode>
-        <StyledEngineProvider injectFirst>
-            <BrowserRouter>
+        <BrowserRouter>
+            <StyledEngineProvider injectFirst>
                 <App />
-            </BrowserRouter>
-        </StyledEngineProvider>
+            </StyledEngineProvider>
+        </BrowserRouter>
     </React.StrictMode>
 );

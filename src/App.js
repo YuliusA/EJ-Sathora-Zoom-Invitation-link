@@ -18,12 +18,12 @@ function App() {
     return (
         <EjsContext.Provider value={value}>
             <CssBaseline />
-                <Routes>
-                    <Route path='/' element={<Layout />}>
-                        <Route index element={<ContentForm />} />
-                        <Route path='host' element={<Host />} />
-                    </Route>
-                </Routes>
+            <Routes>
+                <Route path='/' element={<Layout />}>
+                    <Route index element={<ContentForm />} />
+                    <Route path='host' element={<Host />} />
+                </Route>
+            </Routes>
         </EjsContext.Provider>
     );
 }
@@ -32,7 +32,7 @@ function Layout() {
         <Container maxWidth='sm'>
             <Header />
             <Outlet />
-            <NavDrawer />
+            {/* <NavDrawer /> */}
         </Container>
     );
 }
